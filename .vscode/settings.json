@@ -1,3 +1,6 @@
 {
-    "ansible.python.interpreterPath": "c:\\Users\\agusp\\AppData\\Local\\Programs\\Python\\Python310\\python.exe"
+    "ansible.python.interpreterPath": "c:\\Users\\agusp\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
+    "yaml.schemas": {
+        "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/playbook": "file:///c%3A/Users/agusp/OneDrive/Documents/document%20agus/koding/ansible/monitoring/playbooks/prometheus-playbook.yml"
+    }
 }
