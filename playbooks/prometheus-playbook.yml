@@ -14,19 +14,21 @@
 
   tasks:
     - name: Add entries /etc/cloud/templates/hosts.debian.tmpl
-      ansible.builtin.blockinfile:
-      path:
-      block: |
-        # the following lines are using for KES Server
-        10.0.2.15 iot-server
-        10.0.2.32 ansible-server
+      blockinfile:
+        path: /etc/cloud/templates/hosts.debian.tmpl
+        block: |
+          # the following lines are using for KES Server
+          10.0.2.15 iot-platform-ext
+          10.0.2.31 jenkins-server
+          10.0.2.32 ansible-server
 
     - name: Add entries /etc/hosts
-      ansible.builtin.blockinfile:
+      blockinfile:
         path: /etc/hosts
         block: |
           #the following lines are using for KES Server
-          10.0.2.15 iot-server
+          10.0.2.15 iot-platform-ext
+          10.0.2.31 jenkins-server
           10.0.2.32 ansible-server
 
     - name: Download prometheus
