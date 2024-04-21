@@ -1,6 +1,8 @@
 - hosts: prometheus
   become: true
+  become_user: agus
   vars:
+    ansible_become_password: VRUnusa@22
     packages:
       download_url: https://github.com/prometheus/prometheus/releases/download/v2.37.6/prometheus-2.37.6.linux-amd64.tar.gz
       package_name: prometheus-2.37.6.linux-amd64.tar.gz
