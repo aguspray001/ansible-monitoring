@@ -106,7 +106,7 @@
       become_user: root
       copy:
         src: ../config/systemd/prometheus.service
-        dst: "/etc/systemd/system"
+        dest: "{{ systemd_dir }}"
 
     - name: Daemon Reload
       become: true
