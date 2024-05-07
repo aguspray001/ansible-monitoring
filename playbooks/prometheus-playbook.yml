@@ -100,11 +100,17 @@
       copy:
         src: ../config/prometheus/prometheus.yml
         dest: "{{ config_dir }}"
+        owner: root
+        group: root
+        remote_src: yes
 
     - name: Copy prometheus service
       copy:
         src: ../config/systemd/prometheus.service
         dest: "{{ systemd_dir }}"
+        owner: root
+        group: root
+        remote_src: yes
 
     - name: Daemon Reload
       become: true
