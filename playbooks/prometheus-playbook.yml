@@ -109,7 +109,7 @@
     - name: Daemon Reload
       systemd:
         name: prometheus
-        state: reloaded
+        state: restarted
 
     - name: Start Prometheus Service
       systemd:
