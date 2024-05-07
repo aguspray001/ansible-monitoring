@@ -49,10 +49,6 @@
       group:
         name: "{{ owner }}"
         state: present
-      become: true
-      user:
-        name: agus
-        password: VRUnusa@22
 
     - name: Create prometheus User
       user:
@@ -61,12 +57,12 @@
         shell: /sbin/nologin
         system: yes
         createhome: no
-      become: true
 
     - name: Create config directory
       file:
         path: "{{ config_dir }}"
         state: directory
+
     - name: Create data directory
       file:
         path: "{{ data_dir }}"
@@ -85,6 +81,7 @@
       with_items:
         - "{{ temp_dir }}/prometheus-2.37.6.linux-amd64/prometheus"
         - "{{ temp_dir }}/prometheus-2.37.6.linux-amd64/promtool"
+
     - name: Copy prometheus file
       copy:
         src: "{{ item }}"
