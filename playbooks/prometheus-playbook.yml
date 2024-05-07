@@ -102,16 +102,22 @@
         dest: "{{ config_dir }}"
 
     - name: Copy prometheus service
+      become: true
+      become_user: root
       copy:
         src: ../config/systemd/prometheus.service
         dst: "{{ systemd_dir }}"
 
     - name: Daemon Reload
+      become: true
+      become_user: root
       systemd:
         name: prometheus
         state: reloaded
 
     - name: Start Prometheus Service
+      become: true
+      become_user: root
       systemd:
         name: prometheus
         state: started
