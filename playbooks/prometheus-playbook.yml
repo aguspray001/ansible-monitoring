@@ -102,8 +102,6 @@
         dest: "{{ config_dir }}"
 
     - name: Copy prometheus service
-      become: true
-      become_user: root
       copy:
         src: ../config/systemd/prometheus.service
         dest: "{{ systemd_dir }}"
