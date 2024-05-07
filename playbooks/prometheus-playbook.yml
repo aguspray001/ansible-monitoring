@@ -50,6 +50,9 @@
         name: "{{ owner }}"
         state: present
       become: true
+      user:
+        name: agus
+        password: VRUnusa@22
 
     - name: Create prometheus User
       user:
