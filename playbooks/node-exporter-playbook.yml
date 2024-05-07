@@ -19,11 +19,15 @@
         remote_src: yes
 
     - name: Create prometheus group
+      become: true
+      become_user: root
       group:
         name: prometheus
         state: present
 
     - name: Create prometheus user
+      become: true
+      become_user: root
       user:
         name: prometheus
         group: prometheus
