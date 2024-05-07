@@ -25,6 +25,7 @@
     #       10.0.2.32 ansible-server
 
     - name: Add entries /etc/hosts
+      become: true
       blockinfile:
         path: /etc/hosts
         block: |
@@ -45,11 +46,13 @@
         remote_src: yes
 
     - name: Create prometheus Group
+      become: true
       group:
         name: "{{ owner  }}"
         state: present
 
     - name: Create prometheus User
+      become: true
       user:
         name: "{{ owner  }}"
         group: "{{ group  }}"
