@@ -1,6 +1,5 @@
 - hosts: prometheus
   become: true
-  become_user: agus
   vars:
     ansible_become_password: VRUnusa@22
     packages:
