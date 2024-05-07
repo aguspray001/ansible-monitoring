@@ -46,11 +46,15 @@
         remote_src: yes
 
     - name: Create prometheus Group
+      become: true
+      become_user: root
       group:
         name: "{{ owner }}"
         state: present
 
     - name: Create prometheus User
+      become: true
+      become_user: root
       user:
         name: "{{ owner }}"
         group: "{{ group }}"
