@@ -5,9 +5,9 @@
 10.0.2.31
 
 [node-exporter]
-10.0.2.15 ansible_ssh_user=iot-platform-ext
-10.0.2.31 ansible_ssh_user=agus
-10.0.2.32 ansible_ssh_user=agus
+10.0.2.15 ansible_user=iot-platform-ext ansible_password=VRUnusa@22
+10.0.2.31 ansible_user=agus ansible_password=VRUnusa@22
+10.0.2.32 ansible_user=agus ansible_password=VRUnusa@22
 
-[all:vars]
-ansible_ssh_private_key_file=~/.ssh/id_rsa
+# [all:vars]
+# ansible_ssh_private_key_file=~/.ssh/id_rsa
