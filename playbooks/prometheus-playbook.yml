@@ -36,7 +36,7 @@
 
     - name: Download prometheus
       get_url:
-        url: "{{ packages.download_url  }}"
+        url: "{{ packages.download_url }}"
         dest: "{{ temp_dir  }}/{{ packages.package_name  }}"
 
     - name: Extract Prometheus
@@ -46,34 +46,34 @@
         remote_src: yes
 
     - name: Create prometheus Group
-      become: true
       group:
-        name: "{{ owner  }}"
+        name: "{{ owner }}"
         state: present
+      become: true
 
     - name: Create prometheus User
-      become: true
       user:
-        name: "{{ owner  }}"
-        group: "{{ group  }}"
+        name: "{{ owner }}"
+        group: "{{ group }}"
         shell: /sbin/nologin
         system: yes
         createhome: no
+      become: true
 
     - name: Create config directory
       file:
-        path: "{{ config_dir  }}"
+        path: "{{ config_dir }}"
         state: directory
     - name: Create data directory
       file:
-        path: "{{ data_dir  }}"
-        owner: "{{ owner  }}"
+        path: "{{ data_dir }}"
+        owner: "{{ owner }}"
         group: "{{ group }}"
         state: directory
 
     - name: Copy prometheus binary file
       copy:
-        src: "{{ item  }}"
+        src: "{{ item }}"
         dest: "{{ binary_dir }}"
         owner: root
         mode: "0755"
@@ -84,7 +84,7 @@
         - "{{ temp_dir }}/prometheus-2.37.6.linux-amd64/promtool"
     - name: Copy prometheus file
       copy:
-        src: "{{ item  }}"
+        src: "{{ item }}"
         dest: "{{ config_dir }}"
         owner: root
         group: root
