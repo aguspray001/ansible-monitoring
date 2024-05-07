@@ -130,4 +130,4 @@
         force: yes
       with_items:
         - "{{ temp_dir }}/prometheus-2.37.6.linux-amd64"
-        - "{{ temp_dir }}/{{ package.package_name }}"
+        - "{{ temp_dir }}/{{ packages.package_name }}"
